@@ -16,7 +16,7 @@ function init() {
 
 function onClickBtnItemJuego()
 {
-	var idGame = $(this).parent().data('idgame');
+	var idGame = $(this).parent().data('idGame');
 	console.log(idGame);
 	getSingleGame(idGame);
 }
@@ -47,7 +47,7 @@ function gotoSection(_identificadorDeSeccion) {
 
 function getHistorial() {
 	$.ajax({
-		url: 'http://test-ta.herokuapp.com/games'
+		url:'http://test-ta.herokuapp.com/games'
 	}).success(function (_data) {
 		dibujarHistorial(_data);
 	});
@@ -64,13 +64,12 @@ function getSingleGame(_idGame)
 }
 
 function dibujarHistorial(_datos) {
-	//console.log(_datos);
 	var lista = $('#lista-juegos');
 
 	for (var i in _datos) {
 		console.log(_datos[i].winner_player);
 
-		var html = '<li data-idgame="'+ _datos[i].id +'" class="list-group-item"><button class="btn">Ver</button> Ganador: ' + _datos[i].winner_player + '</li>';
+		var html = '<li data-idgame="'+ _datos[i].id +'class="list-group-item"><button class="btn">Ver</button> Ganador: ' + _datos[i].winner_player + '</li>';
 		lista.append(html);
 	}
 }
