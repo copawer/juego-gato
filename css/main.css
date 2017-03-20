@@ -48,4 +48,17 @@ p,h2
 {
     color: brown;
 }
+table {
+    top: auto;
+    border-collapse: collapse;
+    width: 60px;
+    height: 60px;
+    margin-left: 330px;
+}
+
+table,tr, th, td {
+    border: 1px solid brown;
+    text-align: center;
+
+}
 
